@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İletişim | Libra Otel Tuzla</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+/* NAV */
+.nav-link{
+position:relative;
+font-weight:600;
+color:#334155;
+padding:8px 0;
+transition:.3s;
+}
+
+.nav-link:after{
+content:'';
+position:absolute;
+width:0;
+height:3px;
+bottom:-2px;
+left:0;
+background:linear-gradient(to right,#1e40af,#3b82f6);
+transition:.4s;
+}
+
+.nav-link:hover:after{width:100%}
+.nav-link:hover{color:#1e40af}
+
+.btn-reservation{
+background:linear-gradient(135deg,#1e40af,#3b82f6);
+color:white;
+padding:14px 28px;
+border-radius:9999px;
+font-weight:700;
+}
+
+/* FORM */
+.contact-box{
+background:#fff;
+border-radius:20px;
+padding:35px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+outline:none;
+transition:.3s;
+}
+
+.input:focus{
+border-color:#2563eb;
+box-shadow:0 0 0 2px rgba(37,99,235,.2);
+}
+
+.send-btn{
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+color:#fff;
+padding:14px;
+border-radius:10px;
+width:100%;
+font-weight:600;
+transition:.3s;
+}
+
+.send-btn:hover{
+transform:scale(1.03);
+}
+
+/* FLOAT */
+.floating-buttons{
+position:fixed;
+right:25px;
+bottom:25px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:999;
+}
+
+.float-btn{
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:28px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.phone{background:#2563eb;}
+.whatsapp{background:#25D366;}
+
+</style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+<a href="index.html" class="flex items-center gap-3">
+<span class="text-3xl font-bold text-blue-950">Libra</span>
+<span class="text-3xl font-light text-blue-900">Otel</span>
+</a>
+
+<div class="hidden md:flex items-center gap-9 text-lg">
+<a href="index.html" class="nav-link">Anasayfa</a>
+<a href="odalar.html" class="nav-link">Odalar</a>
+<a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+<a href="iletisim.html" class="nav-link text-blue-700">İletişim</a>
+</div>
+
+<a href="tel:+905301724302" class="btn-reservation hidden md:flex">
+<i class="fas fa-phone mr-2"></i>
+Hemen Rezervasyon Yap
+</a>
+
+</div>
+</nav>
+
+<!-- İLETİŞİM -->
+<section class="pt-36 pb-20">
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center mb-14">İletişim</h2>
+
+<div class="grid md:grid-cols-2 gap-10">
+
+<!-- BİLGİLER -->
+<div class="contact-box">
+
+<h3 class="text-2xl font-semibold mb-6">İletişim Bilgileri</h3>
+
+<p class="mb-4">
+<i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+Aydıntepe Mahallesi, Dinçel Sokak No:23, Tuzla / İstanbul
+</p>
+
+<p class="mb-4">
+<i class="fas fa-phone text-blue-600 mr-2"></i>
++90 530 172 43 02
+</p>
+
+<p class="mb-4">
+<i class="fas fa-envelope text-blue-600 mr-2"></i>
+info@libraotel.com
+</p>
+
+<p class="text-gray-500 mt-6">
+Bizimle iletişime geçmek için formu doldurabilir veya telefon / WhatsApp üzerinden bize ulaşabilirsiniz.
+</p>
+
+</div>
+
+<!-- FORM -->
+<div class="contact-box">
+
+<h3 class="text-2xl font-semibold mb-6">Bize Yazın</h3>
+
+<form action="mailto:info@libraotel.com" method="POST" enctype="text/plain">
+
+<input type="text" name="Ad Soyad" placeholder="Ad Soyad" class="input mb-4" required>
+
+<input type="email" name="Email" placeholder="E-posta" class="input mb-4" required>
+
+<input type="text" name="Konu" placeholder="Konu" class="input mb-4">
+
+<textarea name="Mesaj" rows="5" placeholder="Mesajınız" class="input mb-4" required></textarea>
+
+<button type="submit" class="send-btn">
+Mesaj Gönder
+</button>
+
+</form>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- HARİTA -->
+<section class="py-20 bg-gray-900 text-white text-center">
+<h2 class="text-4xl font-bold mb-6">Konumumuz</h2>
+
+<div class="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+<iframe
+src="https://maps.google.com/maps?q=Aydıntepe%20Mahallesi%20Dinçel%20Sokak%2023%20Tuzla%20İstanbul&z=15&output=embed"
+width="100%" height="480" style="border:0;">
+</iframe>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-blue-900 text-white py-10">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    
+    <!-- Logo + Site Adı (Tıklanabilir) -->
+    <a href="https://www.webvereklam.com" target="_blank" 
+       class="inline-flex items-center gap-3 hover:opacity-80 transition-all duration-300 group">
+      
+      <!-- Logo kısmı (İstersen kendi logonu buraya koyabiliriz) -->
+      <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-blue-900 font-bold text-2xl shadow-md group-hover:scale-110 transition-transform">
+        W
+      </div>
+      
+      <!-- Yazı kısmı -->
+      <div>
+        <span class="text-2xl font-semibold tracking-tight">webvereklam</span>
+        <span class="text-blue-300 text-xl font-light">.com</span>
+      </div>
+    </a>
+
+    <!-- Otel Bilgileri -->
+	<p class="mt-2 text-white/80">
+      📞 Aydıntepe, Dinçel Sk. No: 23, 34947 Tuzla/İstanbul
+    <p class="mt-6 text-white/80">
+      © 2026 Libra Otel - Tuzla / İstanbul
+    </p>
+    <p class="mt-2 text-white/80">
+      📞 +90 530 172 43 02  |  📧 info@libraotel.com
+    </p>
+   
+  </div>
+</footer>
+<!-- FLOAT -->
+<div class="floating-buttons">
+<a href="tel:+905301724302" class="float-btn phone">
+<i class="fas fa-phone"></i>
+</a>
+
+<a href="https://wa.me/905301724302" target="_blank" class="float-btn whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+</div>
+
+</body>
+</html>
