@@ -80,11 +80,26 @@ html, body {
 }
 
 /* Daktilo (Typewriter) Efekti */
-.typing {
-  overflow: hidden;
-  border-right: 3px solid #fcd34d;
-  white-space: nowrap;
-  animation: typing 4s steps(50, end) forwards, blink-caret 0.75s step-end infinite;
+  display: inline;
+  word-break: break-word;
+}
+
+/* PC’de gerçek typing efekti */
+@media (min-width: 768px) {
+  .typing {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end) forwards, blink-caret 0.8s step-end infinite;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent }
 }
 
 @keyframes typing {
