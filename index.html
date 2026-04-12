@@ -366,7 +366,68 @@ html, body {
     </div>
   </div>
 </section>
-
+<!-- YORUM BÖLÜMÜ -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-3">Misafirlerimiz Ne Diyor?</h2>
+      <p class="text-gray-600">Tuzla Libra Otel'de konaklayan değerli misafirlerimizin yorumları</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">"Temiz odalar, konforlu yataklar ve merkezi konum. Tuzla'da kaldığım en iyi otellerden biri."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AY</div>
+          <div><p class="font-semibold">Ahmet Yılmaz</p><p class="text-sm text-gray-500">İş Seyahati</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">"Ailece kaldığımız oda çok rahattı. Personel güler yüzlü ve yardımcıydı."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AK</div>
+          <div><p class="font-semibold">Ayşe Kaya</p><p class="text-sm text-gray-500">Aile Tatili</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★☆</div>
+        <p class="italic">"Ekonomik fiyat ve kaliteli hizmet. Tepeören'e çok yakın, tavsiye ederim."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">MD</div>
+          <div><p class="font-semibold">Mehmet Demir</p><p class="text-sm text-gray-500">Hafta Sonu Konaklaması</p></div>
+  </div>
+  </section>
+  <section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+     </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">""Odalar çok temiz ve düzenli. Personel çok ilgili.."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AY</div>
+          <div><p class="font-semibold">Fatma Şahin</p><p class="text-sm text-gray-500">İş Seyahati</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">"Ailece kaldığımız oda çok rahattı. Personel güler yüzlü ve yardımcıydı."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AK</div>
+          <div><p class="font-semibold">Ayşe Kaya</p><p class="text-sm text-gray-500">Aile Tatili</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★☆</div>
+        <p class="italic">"Ekonomik fiyat ve kaliteli hizmet. Tepeören'e çok yakın, tavsiye ederim."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">MD</div>
+          <div><p class="font-semibold">Mehmet Demir</p><p class="text-sm text-gray-500">Hafta Sonu Konaklaması</p></div>
+  </div>
+</section>
 <!-- HARİTA -->
 <section class="py-20 bg-gray-900 text-white text-center">
 <h2 class="text-4xl font-bold mb-4">Konumumuz</h2>
@@ -374,38 +435,6 @@ html, body {
 <iframe src="https://maps.google.com/maps?q=Aydıntepe%20Mahallesi%20Dinçel%20Sokak%2023%20Tuzla%20İstanbul&z=15&output=embed" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
 </div>
 </section>
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeBtn = document.getElementById("closeBtn");
-
-menuBtn.addEventListener("click", () => { mobileMenu.style.display = "flex"; });
-closeBtn.addEventListener("click", () => { mobileMenu.style.display = "none"; });
-mobileMenu.addEventListener("click", (e) => {
-  if (e.target === mobileMenu) mobileMenu.style.display = "none";
-});
-</script>
-  <!-- FLOATING BUTTONS -->
-  <div class="floating-buttons">
-    <a href="tel:+905301724302" class="float-btn phone"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/905301724302" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-  </div>
-<script>
-const text = "Eviniz   Gibi•Samimi hizmet•Modern Odalar•";
-const el = document.getElementById("typewriter");
-
-let i = 0;
-
-function type() {
-  if (i < text.length) {
-    el.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 70); // hız
-  }
-}
-
-type();
-</script>
 <!-- FOOTER - Beyaz Boşluk Sorunu Çözülmüş Hali -->
 <footer class="bg-[#0f172a] text-white pt-16 pb-8 relative">
   <div class="max-w-7xl mx-auto px-6">
@@ -474,7 +503,7 @@ type();
         
         <!-- webvereklam.org -->
         <a href="https://www.webvereklam.org" target="_blank" class="flex items-center gap-3 hover:opacity-80 transition-all">
-          <div class="w-10 h-15 bg-white rounded-2xl flex items-center justify-center text-blue-900 font-bold text-2xl shadow">W</div>
+          <div class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-blue-900 font-bold text-2xl shadow">W</div>
           <div>
             <span class="font-bold text-white">webvereklam</span>
             <span class="text-blue-300">.org</span>
@@ -488,5 +517,37 @@ type();
         <!-- Telefon ve Mail -->
         <div class="text-gray-400 text-sm">
           📞 +90 530 172 43 02  |  info@libraotel.com
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
+
+menuBtn.addEventListener("click", () => { mobileMenu.style.display = "flex"; });
+closeBtn.addEventListener("click", () => { mobileMenu.style.display = "none"; });
+mobileMenu.addEventListener("click", (e) => {
+  if (e.target === mobileMenu) mobileMenu.style.display = "none";
+});
+</script>
+  <!-- FLOATING BUTTONS -->
+  <div class="floating-buttons">
+    <a href="tel:+905301724302" class="float-btn phone"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/905301724302" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+<script>
+const text = "Eviniz   Gibi•Samimi hizmet•Modern Odalar•";
+const el = document.getElementById("typewriter");
+
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    el.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 70); // hız
+  }
+}
+
+type();
+</script>
 </body>
 </html>
