@@ -1,179 +1,213 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Libra Otel | Tuzla İstanbul</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<style>
-.feature-card {
-  background: #f8fafc;
-  border-radius: 18px;
-  padding: 28px 15px;
-  transition: all 0.35s ease;
-  cursor: default;
-  border: 1px solid #eef2f7;
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tuzla Libra Otel - Tepeören, Postane, Şifa ve Yayla Mahallelerine yakın konforlu ve ekonomik otel. Tuzla Marina ve Sabiha Gökçen'e yakın. 24 saat resepsiyon, temiz odalar.">
+    <meta name="keywords" content="Tuzla otel, Libra Otel Tuzla, Tepeören otel, Postane Mahallesi otel, Şifa Mahallesi otel, Yayla Mahallesi otel, Tuzla ucuz otel">
+    <title>Libra Otel Tuzla | Tepeören Postane Şifa Yayla Mahallesi Konforlu Otel</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+	  /* Sayfanın en altındaki ve yanındaki tüm boşlukları sıfırlar */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden; /* Yatay kaymayı engeller */
+  }
+  /* Footer'ın altındaki görünmez boşluğu (margin collapse) engeller */
+  footer {
+    display: block;
+    margin-bottom: 0 !important;
+    padding-bottom: 20px; /* Alt kısma biraz iç boşluk eklemek daha şık durur */
+  }
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  background: #ffffff;
+html, body {
+  height: 100%;
 }
-.feature-icon {
-  width: 70px;
-  height: 70px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  border-radius: 50%;
-  background: linear-gradient(135deg,#0ea5e9,#2563eb);
-  color: white;
-  transition: 0.3s;
-}
-.feature-card:hover .feature-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-.feature-card p {
-  color: #1f2937;
-  font-size: 15px;
-  letter-spacing: 0.3px;
-}
-.hero-bg{
-background-attachment:scroll;
-background-image:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('images/libra.jpg');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-.nav-link{
-position:relative;
-font-weight:600;
-color:#334155;
-padding:8px 0;
-transition:.3s;
-}
-.nav-link:after{
-content:'';
-position:absolute;
-width:0;
-height:3px;
-bottom:-2px;
-left:0;
-background:linear-gradient(to right,#1e40af,#3b82f6);
-transition:.4s;
-}
-.nav-link:hover:after{width:100%}
-.nav-link:hover{color:#1e40af}
-.btn-reservation,.btn-hero{
-background:linear-gradient(135deg,#1e40af,#3b82f6);
-color:white;
-padding:14px 28px;
-border-radius:9999px;
-font-weight:700;
-transition:.4s;
-display:inline-flex;
-align-items:center;
-gap:8px;
-}
-.btn-reservation:hover,.btn-hero:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 30px rgba(30,64,175,.4);
-}
-/* FLOATING BUTTONS */
-.floating-buttons{
-position:fixed;
-right:25px;
-bottom:25px;
-display:flex;
-flex-direction:column;
-gap:12px;
-z-index:999;
-}
-.float-btn{
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:28px;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-animation:floatMove 2.5s ease-in-out infinite;
-transition:.3s;
-}
-.float-btn:hover{
-transform:scale(1.1);
-}
-.phone{background:#2563eb;}
-.whatsapp{background:#25D366;}
-@keyframes floatMove{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
+	.nav-link {
+  position: relative;
+  padding-bottom: 6px;
 }
 
-/* ====================== MOBİL MENÜ ====================== */
-#mobileMenu {
-  position: fixed;
-  top: 0;
+.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
   left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #1e40af, #3b82f6);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 3px;
+}
+
+.nav-link:hover:after {
   width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 1000;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 35px;
-  font-size: 1.6rem;
-  color: white;
 }
-#mobileMenu a {
-  color: white;
-  text-decoration: none;
-  padding: 12px 30px;
-  border-radius: 9999px;
-  transition: 0.3s;
+.nav-link:hover {
+  color: #1e3a8a;
 }
-#mobileMenu a:hover {
-  background: rgba(255,255,255,0.15);
+	/* Animasyonlar */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
 }
-</style>
-</head>
-<body class="font-sans">
 
-<!-- NAVBAR -->
-<nav class="bg-white shadow-md fixed w-full z-50">
-<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-  <a href="index.html" class="flex items-center gap-3">
-    <span class="text-3xl font-bold text-blue-950">Libra</span>
-    <span class="text-3xl font-light text-blue-900">Otel</span>
-  </a>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  <!-- Masaüstü Menü -->
-  <div class="hidden md:flex items-center gap-9 text-lg">
-    <a href="index.html" class="nav-link">Anasayfa</a>
-    <a href="odalar.html" class="nav-link">Odalar</a>
-    <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-    <a href="iletisim.html" class="nav-link">İletişim</a>
+.animate-scale-in {
+  animation: scaleIn 1.2s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1.2s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Daktilo (Typewriter) Efekti */
+.typing {
+  overflow: hidden;
+  border-right: 3px solid #fcd34d;
+  white-space: nowrap;
+  animation: typing 4s steps(50, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fcd34d }
+}
+        .feature-card {
+          background: #f8fafc;
+          border-radius: 18px;
+          padding: 28px 15px;
+          transition: all 0.35s ease;
+          cursor: default;
+          border: 1px solid #eef2f7;
+        }
+        .feature-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+          background: #ffffff;
+        }
+        .feature-icon {
+          width: 70px; height: 70px; margin: auto;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 26px; border-radius: 50%;
+          background: linear-gradient(135deg,#0ea5e9,#2563eb);
+          color: white; transition: 0.3s;
+        }
+        .feature-card:hover .feature-icon {
+          transform: scale(1.1) rotate(5deg);
+        }
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        .review-card:hover { transform: translateY(-5px); }
+        
+        .hero-bg{
+            background-image: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('images/libra.jpg');
+            background-size: cover; background-position: center;
+        }
+        .nav-link{
+            position:relative; font-weight:600; color:#334155; padding:8px 0; transition:.3s;
+        }
+        .nav-link:after{
+            content:''; position:absolute; width:0; height:3px; bottom:-2px; left:0;
+            background:linear-gradient(to right,#1e40af,#3b82f6); transition:.4s;
+        }
+        .nav-link:hover:after{width:100%}
+        .nav-link:hover{color:#1e40af}
+        .btn-reservation,.btn-hero{
+            background:linear-gradient(135deg,#1e40af,#3b82f6);
+            color:white; padding:14px 28px; border-radius:9999px; font-weight:700;
+            transition:.4s; display:inline-flex; align-items:center; gap:8px;
+        }
+        .btn-reservation:hover,.btn-hero:hover{
+            transform:translateY(-4px); box-shadow:0 15px 30px rgba(30,64,175,.4);
+        }
+        .floating-buttons{
+            position:fixed; right:25px; bottom:25px;
+            display:flex; flex-direction:column; gap:12px; z-index:999;
+        }
+        .float-btn{
+            width:65px; height:65px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-size:28px;
+            box-shadow:0 10px 25px rgba(0,0,0,.3);
+            animation:floatMove 2.5s ease-in-out infinite; transition:.3s;
+        }
+        .float-btn:hover{ transform:scale(1.1); }
+        .phone{background:#2563eb;}
+        .whatsapp{background:#25D366;}
+        @keyframes floatMove{
+            0%{transform:translateY(0)} 50%{transform:translateY(-10px)} 100%{transform:translateY(0)}
+        }
+        #mobileMenu {
+          position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+          background: rgba(0, 0, 0, 0.95); z-index: 1000;
+          display: none; flex-direction: column; align-items: center; justify-content: center;
+          gap: 35px; font-size: 1.6rem; color: white;
+        }
+        #mobileMenu a {
+          color: white; text-decoration: none; padding: 12px 30px;
+          border-radius: 9999px; transition: 0.3s;
+        }
+        #mobileMenu a:hover { background: rgba(255,255,255,0.15); }
+    </style>
+<!-- NAVBAR - Modern Premium Versiyon -->
+<nav class="bg-white/95 backdrop-blur-lg shadow-xl fixed w-full z-[100] border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <span class="text-4xl font-bold tracking-tighter text-slate-900">Libra</span>
+      <span class="text-4xl font-light tracking-tight text-blue-800">Otel</span>
+    </a>
+    <!-- Masaüstü Menü -->
+    <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+      <a href="index.html" class="nav-link text-gray-700 hover:text-slate-900 transition-all">Anasayfa</a>
+      <a href="odalar.html" class="nav-link text-gray-700 hover:text-slate-900 transition-all">Odalar</a>
+      <a href="hakkimizda.html" class="nav-link text-gray-700 hover:text-slate-900 transition-all">Hakkımızda</a>
+      <a href="iletisim.html" class="nav-link text-gray-700 hover:text-slate-900 transition-all">İletişim</a>
+    </div>
+
+    <!-- Rezervasyon Butonu -->
+    <a href="tel:+905301724302" 
+       class="hidden md:flex items-center gap-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:via-indigo-700 hover:to-blue-800 text-white font-semibold px-9 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/40">
+      <i class="fas fa-phone"></i>
+      <span>Hemen Rezervasyon Yap</span>
+    </a>
+
+    <!-- Mobil Hamburger Butonu -->
+    <button id="menuBtn" 
+            class="md:hidden w-12 h-12 flex items-center justify-center text-3xl text-slate-900 hover:text-blue-600 transition-colors focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
-
-  <!-- Rezervasyon Butonu (Masaüstü) -->
-  <a href="tel:+905301724302" class="btn-reservation hidden md:flex">
-    <i class="fas fa-phone"></i>
-    Hemen Rezervasyon Yap
-  </a>
-
-  <!-- Hamburger Butonu -->
-  <button id="menuBtn" class="md:hidden text-3xl text-blue-950 focus:outline-none">
-    <i class="fas fa-bars"></i>
-  </button>
-</div>
 </nav>
 
 <!-- MOBİL MENÜ -->
@@ -181,40 +215,52 @@ transform:scale(1.1);
   <button id="closeBtn" class="absolute top-8 right-8 text-5xl text-white">
     <i class="fas fa-times"></i>
   </button>
-  
   <a href="index.html">Anasayfa</a>
   <a href="odalar.html">Odalar</a>
   <a href="hakkimizda.html">Hakkımızda</a>
   <a href="iletisim.html">İletişim</a>
-  
   <a href="tel:+905301724302" class="btn-reservation text-lg mt-6">
-    <i class="fas fa-phone"></i>
-    Hemen Rezervasyon Yap
+    <i class="fas fa-phone"></i> Hemen Rezervasyon Yap
   </a>
 </div>
 
-<!-- HERO -->
-<section class="hero-bg h-screen flex items-center text-white">
-<div class="max-w-4xl mx-auto text-center px-6 pt-20">
-<h2 class="text-6xl md:text-7xl font-bold mb-6">Hoş Geldiniz</h2>
-<p class="text-2xl md:text-3xl mb-12">
-Tuzla Marina manzaralı • Konfor ve huzur bir arada
-</p>
-<a href="odalar.html" class="btn-hero text-xl px-16 py-6">
-Odalarımızı İncele
-</a>
-</div>
-</section>
+<!-- HERO - Animasyonlu & Cafcaflı Versiyon -->
+<section class="relative h-screen flex items-center text-white overflow-hidden">
+  
+  <!-- Arka Plan Resmi -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+       style="background-image: url('images/onproje.jpg');"></div>
+  
+  <!-- Güçlü Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/80"></div>
 
-<!-- TANITIM -->
-<section class="py-20 bg-gray-50">
-<div class="max-w-7xl mx-auto px-6 text-center">
-<h2 class="text-4xl font-bold mb-6">Libra Otel Tuzla</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-Modern tasarımı, konforlu odaları ve Tuzla Marina’ya yakın merkezi konumuyla
-siz değerli misafirlerimize unutulmaz bir konaklama deneyimi sunuyoruz.
-</p>
-</div>
+  <!-- İçerik -->
+  <div class="max-w-5xl mx-auto text-center px-6 pt-20 relative z-10">
+    
+    <div class="mb-6 animate-fade-in">
+      <span class="inline-block px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-sm tracking-[3px] font-medium">
+        TUZLA LİBRA OTEL • İSTANBUL
+      </span>
+    </div>
+    
+    <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tighter leading-none animate-scale-in">
+      Hoş Geldiniz
+    </h1>
+    
+    <!-- Daktilo Efekti ile Alt Yazı -->
+    <div class="mb-14 max-w-3xl mx-auto">
+      <p id="typewriter" 
+         class="text-2xl md:text-3xl lg:text-4xl font-light text-white/90 min-h-[1.2em] typing">
+        Modern konfor • Samimi hizmet • Modern Odalar . 
+      </p>
+    </div>
+    
+    <a href="odalar.html" 
+       class="group inline-flex items-center gap-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-xl md:text-2xl font-semibold px-20 py-7 rounded-2xl transition-all duration-300 hover:scale-110 shadow-2xl shadow-black/60 animate-fade-in-delay">
+      <span>Odalarımızı İncele</span>
+      <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+    </a>
+  </div>
 </section>
 
 <!-- KARTLAR -->
@@ -243,40 +289,134 @@ siz değerli misafirlerimize unutulmaz bir konaklama deneyimi sunuyoruz.
 </a>
 </div>
 </section>
-
-<!-- Tesis Özellikleri -->
-<section class="py-20 bg-white">
+<!-- Tesis Özellikleri - Premium Havalı Versiyon -->
+<section class="py-24 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12">Tesis Özellikleri</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
-      <div class="feature-card">
-        <i class="fas fa-wifi feature-icon"></i>
-        <p class="mt-4 font-semibold">Ücretsiz Wi-Fi</p>
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-white tracking-tight">Tesis Özellikleri</h2>
+      <p class="text-zinc-400 mt-3 text-lg">Konforunuz için sunduğumuz ayrıcalıklar</p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      
+      <div class="group bg-zinc-900/70 backdrop-blur-md border border-zinc-700/50 hover:border-amber-500 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-5xl text-amber-400 bg-zinc-800/80 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-inner">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <p class="font-semibold text-xl text-white">Ücretsiz Wi-Fi</p>
+        <p class="text-zinc-400 text-sm mt-2">Yüksek hızlı internet</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-snowflake feature-icon"></i>
-        <p class="mt-4 font-semibold">Klima</p>
+
+      <div class="group bg-zinc-900/70 backdrop-blur-md border border-zinc-700/50 hover:border-amber-500 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-5xl text-amber-400 bg-zinc-800/80 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-inner">
+          <i class="fas fa-snowflake"></i>
+        </div>
+        <p class="font-semibold text-xl text-white">Klima</p>
+        <p class="text-zinc-400 text-sm mt-2">Konforlu sıcaklık kontrolü</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-tv feature-icon"></i>
-        <p class="mt-4 font-semibold">Akıllı TV</p>
+
+      <div class="group bg-zinc-900/70 backdrop-blur-md border border-zinc-700/50 hover:border-amber-500 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-5xl text-amber-400 bg-zinc-800/80 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-inner">
+          <i class="fas fa-tv"></i>
+        </div>
+        <p class="font-semibold text-xl text-white">Akıllı TV</p>
+        <p class="text-zinc-400 text-sm mt-2">Netflix &amp; Uydu</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-car feature-icon"></i>
-        <p class="mt-4 font-semibold">Ücretsiz Otopark</p>
+
+      <div class="group bg-zinc-900/70 backdrop-blur-md border border-zinc-700/50 hover:border-amber-500 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-5xl text-amber-400 bg-zinc-800/80 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-inner">
+          <i class="fas fa-car"></i>
+        </div>
+        <p class="font-semibold text-xl text-white">Ücretsiz Otopark</p>
+        <p class="text-zinc-400 text-sm mt-2">Güvenli kapalı alan</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-concierge-bell feature-icon"></i>
-        <p class="mt-4 font-semibold">24 Saat Resepsiyon</p>
+
+      <div class="group bg-zinc-900/70 backdrop-blur-md border border-zinc-700/50 hover:border-amber-500 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-5xl text-amber-400 bg-zinc-800/80 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-inner">
+          <i class="fas fa-concierge-bell"></i>
+        </div>
+        <p class="font-semibold text-xl text-white">24 Saat Resepsiyon</p>
+        <p class="text-zinc-400 text-sm mt-2">Her an yanınızdayız</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-shower feature-icon"></i>
-        <p class="mt-4 font-semibold">24 Saat Sıcak Su</p>
+
+      <div class="group bg-zinc-900/70 backdrop-blur-md border border-zinc-700/50 hover:border-amber-500 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-5xl text-amber-400 bg-zinc-800/80 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-inner">
+          <i class="fas fa-shower"></i>
+        </div>
+        <p class="font-semibold text-xl text-white">24 Saat Sıcak Su</p>
+        <p class="text-zinc-400 text-sm mt-2">Sınırsız konfor</p>
       </div>
     </div>
   </div>
 </section>
-
+<!-- YORUM BÖLÜMÜ -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-3">Misafirlerimiz Ne Diyor?</h2>
+      <p class="text-gray-600">Tuzla Libra Otel'de konaklayan değerli misafirlerimizin yorumları</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">"Temiz odalar, konforlu yataklar ve merkezi konum. Tuzla'da kaldığım en iyi otellerden biri."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AY</div>
+          <div><p class="font-semibold">Ahmet Yılmaz</p><p class="text-sm text-gray-500">İş Seyahati</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">"Ailece kaldığımız oda çok rahattı. Personel güler yüzlü ve yardımcıydı."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AK</div>
+          <div><p class="font-semibold">Ayşe Kaya</p><p class="text-sm text-gray-500">Aile Tatili</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★☆</div>
+        <p class="italic">"Ekonomik fiyat ve kaliteli hizmet. Tepeören'e çok yakın, tavsiye ederim."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">MD</div>
+          <div><p class="font-semibold">Mehmet Demir</p><p class="text-sm text-gray-500">Hafta Sonu Konaklaması</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+     </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">""Odalar çok temiz ve düzenli. Personel çok ilgili.."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AY</div>
+          <div><p class="font-semibold">Fatma Şahin</p><p class="text-sm text-gray-500">İş Seyahati</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★★</div>
+        <p class="italic">"Ailece kaldığımız oda çok rahattı. Personel güler yüzlü ve yardımcıydı."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">AK</div>
+          <div><p class="font-semibold">Ayşe Kaya</p><p class="text-sm text-gray-500">Aile Tatili</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="flex gap-1 mb-4 text-2xl text-yellow-400">★★★★☆</div>
+        <p class="italic">"Ekonomik fiyat ve kaliteli hizmet. Tepeören'e çok yakın, tavsiye ederim."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-medium">MD</div>
+          <div><p class="font-semibold">Mehmet Demir</p><p class="text-sm text-gray-500">Hafta Sonu Konaklaması</p></div>
+        </div>
+      </div>
+	  
+    </div>
+  </div>
+</section>
 <!-- HARİTA -->
 <section class="py-20 bg-gray-900 text-white text-center">
 <h2 class="text-4xl font-bold mb-4">Konumumuz</h2>
@@ -284,53 +424,111 @@ siz değerli misafirlerimize unutulmaz bir konaklama deneyimi sunuyoruz.
 <iframe src="https://maps.google.com/maps?q=Aydıntepe%20Mahallesi%20Dinçel%20Sokak%2023%20Tuzla%20İstanbul&z=15&output=embed" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
 </div>
 </section>
-
-<!-- FOOTER -->
-<footer class="bg-blue-900 text-white py-12">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <a href="https://www.webvereklam.org" target="_blank" class="inline-flex items-center gap-3 hover:opacity-80 transition-all duration-300 group mb-8">
-      <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-900 font-bold text-3xl shadow-lg group-hover:scale-110 transition-transform">W</div>
-      <div class="text-left">
-        <span class="text-3xl font-bold tracking-tight">webvereklam</span>
-        <span class="text-blue-300 text-2xl font-medium">.org</span>
+<!-- FOOTER - Beyaz Boşluk Sorunu Çözülmüş Hali -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-5 gap-10">
+      
+      <!-- 1. Otel Bilgisi -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Libra Otel Tuzla</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Konforlu ve ekonomik konaklama için Tuzla'nın merkezinde.<br>
+          Tepeören, Postane, Şifa ve Yayla mahallelerine yakın.
+        </p>
       </div>
-    </a>
-    <p class="text-lg text-white/90">
-      © 2026 Libra Otel - Webvereklam.org - Profesyonel Web Tasarım & Dijital Reklam Ajansı
-    </p>
-    <p class="mt-3 text-white/80">
-      📞 +90 530 172 43 02 &nbsp;&nbsp; | &nbsp;&nbsp; 📧 info@webvereklam.org
-    </p>
-  </div>
 
+      <!-- 2. Hızlı Linkler -->
+      <div>
+        <h4 class="font-semibold mb-4">Hızlı Linkler</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="index.html" class="hover:text-white">Ana Sayfa</a></li>
+          <li><a href="odalar.html" class="hover:text-white">Odalarımız</a></li>
+          <li><a href="hakkimizda.html" class="hover:text-white">Hakkımızda</a></li>
+          <li><a href="iletisim.html" class="hover:text-white">İletişim</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Hizmetlerimiz -->
+      <div>
+        <h4 class="font-semibold mb-4">Hizmetlerimiz</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li>Ücretsiz Wi-Fi</li>
+          <li>24 Saat Resepsiyon</li>
+          <li>Klima &amp; Akıllı TV</li>
+          <li>Ücretsiz Otopark</li>
+          <li>Günlük Temizlik</li>
+          <li>24 Saat Sıcak Su</li>
+        </ul>
+      </div>
+
+      <!-- 4. Bölgeler -->
+      <div>
+        <h4 class="font-semibold mb-4">Bölgeler</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#" class="hover:text-white">Tepeören Mahallesi Otel</a></li>
+          <li><a href="#" class="hover:text-white">Postane Mahallesi Otel</a></li>
+          <li><a href="#" class="hover:text-white">Şifa Mahallesi Otel</a></li>
+          <li><a href="#" class="hover:text-white">Yayla Mahallesi Otel</a></li>
+          <li><a href="#" class="hover:text-white">Tuzla Merkez Otel</a></li>
+        </ul>
+      </div>
+
+      <!-- 5. İletişim -->
+      <div>
+        <h4 class="font-semibold mb-4">İletişim</h4>
+        <div class="space-y-3 text-sm text-gray-300">
+          <p><i class="fas fa-map-marker-alt mr-2"></i> Aydıntepe Mah. Dinçel Sk. No:23 Tuzla / İstanbul</p>
+          <p><i class="fas fa-phone mr-2"></i> <a href="tel:+905301724302" class="hover:text-white">+90 530 172 43 02</a></p>
+          <p><i class="fas fa-envelope mr-2"></i> info@libraotel.com</p>
+          <p><i class="fas fa-clock mr-2"></i> 7/24 Hizmet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alt Çizgi + Copyright + webvereklam.org -->
+    <div class="border-t border-slate-700 mt-16 pt-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+        
+        <!-- webvereklam.org -->
+        <a href="https://www.webvereklam.org" target="_blank" class="flex items-center gap-3 hover:opacity-80 transition-all">
+          <div class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-blue-900 font-bold text-2xl shadow">W</div>
+          <div>
+            <span class="font-bold text-white">webvereklam</span>
+            <span class="text-blue-300">.org</span>
+          </div>
+        </a>
+        <!-- Copyright -->
+        <div class="text-center text-gray-400">
+          © 2026 Libra Otel Tuzla • Tüm hakları saklıdır.<br>
+          <span class="text-xs">Profesyonel Web Tasarım &amp; Dijital Reklam Ajansı</span>
+        </div>
+        <!-- Telefon ve Mail -->
+        <div class="text-gray-400 text-sm">
+          📞 +90 530 172 43 02 &nbsp; | &nbsp; info@libraotel.com
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="tel:+905301724302" class="float-btn phone"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/905301724302" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <!-- JAVASCRIPT -->
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
+
+menuBtn.addEventListener("click", () => { mobileMenu.style.display = "flex"; });
+closeBtn.addEventListener("click", () => { mobileMenu.style.display = "none"; });
+mobileMenu.addEventListener("click", (e) => {
+  if (e.target === mobileMenu) mobileMenu.style.display = "none";
+});
+</script>
+</footer>
   <!-- FLOATING BUTTONS -->
   <div class="floating-buttons">
     <a href="tel:+905301724302" class="float-btn phone"><i class="fas fa-phone"></i></a>
     <a href="https://wa.me/905301724302" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
-
-<!-- JAVASCRIPT -->
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeBtn = document.getElementById("closeBtn");
-
-menuBtn.addEventListener("click", () => {
-  mobileMenu.style.display = "flex";
-});
-
-closeBtn.addEventListener("click", () => {
-  mobileMenu.style.display = "none";
-});
-
-// Menü dışına tıklayınca kapanması
-mobileMenu.addEventListener("click", (e) => {
-  if (e.target === mobileMenu) {
-    mobileMenu.style.display = "none";
-  }
-});
-</script>
-
 </body>
 </html>
