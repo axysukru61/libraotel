@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap belirt (henüz yoksa sonra ekleyeceğiz)
+Sitemap: https://libraotel.com/sitemap.xml
+
+# İsteğe bağlı: belirli klasörleri engellemek istersen
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /images/
