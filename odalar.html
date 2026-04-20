@@ -4,26 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Libra Otel | Odalar</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
 <style>
 body{font-family:sans-serif;margin:0;padding:0}
-
 /* NAV */
 .nav-link{position:relative;font-weight:600;color:#334155;padding:8px 0;}
 .nav-link:after{content:'';position:absolute;width:0;height:3px;bottom:-2px;left:0;background:linear-gradient(to right,#1e40af,#3b82f6);transition:.4s;}
 .nav-link:hover:after{width:100%}
 .nav-link:hover{color:#1e40af}
-
 /* BUTTON */
 .btn-reservation{
 background:linear-gradient(135deg,#1e40af,#3b82f6);
 color:white;padding:14px 28px;border-radius:9999px;font-weight:700;
 display:inline-flex;align-items:center;gap:8px;
 }
-
 /* HERO */
 .hero-bg{
 background-image:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('images/libra.jpg');
@@ -36,7 +31,6 @@ align-items:center;
 justify-content:center;
 color:white;
 }
-
 /* GRID */
 .room-grid{
 display:grid;
@@ -50,20 +44,6 @@ padding:60px 20px;
 @media(min-width:1024px){.room-grid{grid-template-columns:repeat(3,1fr)}}
 
 /* ROOM CARDS */
-.room-grid{
-display:grid;
-grid-template-columns:1fr;
-gap:24px;
-max-width:1200px;
-margin:auto;
-padding:60px 20px;
-}
-@media(min-width:768px){
-.room-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(min-width:1024px){
-.room-grid{grid-template-columns:repeat(3,1fr)}
-}
 .room-card{
 background:white;
 border-radius:20px;
@@ -93,10 +73,87 @@ transition:.3s;
 }
 .reserve-btn:hover{transform:scale(1.05)}
 
-.reserve-btn{
-display:block;text-align:center;
-background:linear-gradient(135deg,#1e40af,#3b82f6);
-color:white;padding:12px 0;border-radius:9999px;font-weight:600;
+/* GALERİ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.gallery-item:hover {
+  transform: scale(1.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.12);
+}
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  color: white;
+  font-weight: 600;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
 }
 
 /* FLOAT */
@@ -112,18 +169,14 @@ color:#fff;font-size:24px;
 .whatsapp{background:#25D366;}
 </style>
 </head>
-
 <body>
-
 <!-- NAVBAR -->
 <nav class="bg-white shadow-md fixed w-full z-50">
 <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
 <a href="index.html" class="flex items-center gap-3">
 <span class="text-3xl font-bold text-blue-950">Libra</span>
 <span class="text-3xl font-light text-blue-900">Otel</span>
 </a>
-
 <!-- DESKTOP MENU -->
 <div class="hidden md:flex items-center gap-9 text-lg">
 <a href="index.html" class="nav-link">Anasayfa</a>
@@ -131,25 +184,20 @@ color:#fff;font-size:24px;
 <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
 <a href="iletisim.html" class="nav-link">İletişim</a>
 </div>
-
 <a href="tel:+905397460093" class="btn-reservation hidden md:flex">
 <i class="fas fa-phone"></i> Rezervasyon
 </a>
-
 <!-- MOBILE BUTTON -->
 <button id="menuBtn" class="md:hidden text-3xl text-blue-900">
 <i class="fas fa-bars"></i>
 </button>
-
 </div>
-
 <!-- MOBILE MENU -->
 <div id="mobileMenu" class="hidden md:hidden bg-white px-6 pb-6">
 <a href="index.html" class="block py-3 border-b">Anasayfa</a>
 <a href="odalar.html" class="block py-3 border-b">Odalar</a>
 <a href="hakkimizda.html" class="block py-3 border-b">Hakkımızda</a>
 <a href="iletisim.html" class="block py-3 border-b">İletişim</a>
-
 <a href="tel:+905397460093" class="btn-reservation mt-4 w-full justify-center">
 <i class="fas fa-phone"></i> Hemen Ara
 </a>
@@ -163,60 +211,145 @@ color:#fff;font-size:24px;
 
 <!-- ODALAR -->
 <section class="room-grid">
+  <!-- Standart Oda -->
+  <div class="room-card">
+    <img src="images/libra17.jpeg" class="room-img" alt="Standart Oda">
+    <div class="p-6">
+      <h3>Standart Oda</h3>
+      <ul>
+        <li><i class="fas fa-user"></i>2 Kişilik Konaklama</li>
+        <li><i class="fas fa-wifi"></i>Ücretsiz Wi-Fi</li>
+        <li><i class="fas fa-snowflake"></i>Klima</li>
+        <li><i class="fas fa-tv"></i>Akıllı TV</li>
+        <li><i class="fas fa-shower"></i>Özel Banyo</li>
+      </ul>
+      <a href="tel:+905397460093" class="reserve-btn">Rezervasyon Yap</a>
+    </div>
+  </div>
 
-<!-- Standart Oda -->
-<div class="room-card">
-<img src="images/oda.jpg" class="room-img">
-<div class="p-6">
-<h3>Standart Oda</h3>
-<ul>
-<li><i class="fas fa-user"></i>2 Kişilik Konaklama</li>
-<li><i class="fas fa-wifi"></i>Ücretsiz Wi-Fi</li>
-<li><i class="fas fa-snowflake"></i>Klima</li>
-<li><i class="fas fa-tv"></i>Akıllı TV</li>
-<li><i class="fas fa-shower"></i>Özel Banyo</li>
-</ul>
-<a href="tel:+905397460093" class="reserve-btn">Rezervasyon Yap</a>
-</div>
-</div>
+  <!-- 3 Kişilik Oda (eski Deniz Manzaralı) -->
+  <div class="room-card">
+    <img src="images/libra10.jpeg" class="room-img" alt="3 Kişilik Oda">
+    <div class="p-6">
+      <h3>3 Kişilik Oda</h3>
+      <ul>
+        <li><i class="fas fa-users"></i>3 Kişilik Konaklama</li>
+        <li><i class="fas fa-wifi"></i>Ücretsiz Wi-Fi</li>
+        <li><i class="fas fa-snowflake"></i>Klima</li>
+        <li><i class="fas fa-tv"></i>Akıllı TV</li>
+        <li><i class="fas fa-shower"></i>Özel Banyo</li>
+      </ul>
+      <a href="tel:+905397460093" class="reserve-btn">Rezervasyon Yap</a>
+    </div>
+  </div>
 
-<!-- Deniz Manzaralı Oda -->
-<div class="room-card">
-<img src="images/oda2.jpg" class="room-img">
-<div class="p-6">
-<h3>Deniz Manzaralı Oda</h3>
-<ul>
-<li><i class="fas fa-water"></i>Deniz Manzarası</li>
-<li><i class="fas fa-user"></i>2 Kişilik Konaklama</li>
-<li><i class="fas fa-wifi"></i>Ücretsiz Wi-Fi</li>
-<li><i class="fas fa-snowflake"></i>Klima</li>
-<li><i class="fas fa-mug-hot"></i>Mini İkram Seti</li>
-</ul>
-<a href="tel:+905397460093" class="reserve-btn">Rezervasyon Yap</a>
-</div>
-</div>
-
-<!-- Deluxe Oda -->
-<div class="room-card">
-<img src="images/oda3.jpg" class="room-img">
-<div class="p-6">
-<h3>Deluxe Oda</h3>
-<ul>
-<li><i class="fas fa-expand"></i>Geniş Oda Alanı</li>
-<li><i class="fas fa-bed"></i>King Size Yatak</li>
-<li><i class="fas fa-tv"></i>Akıllı TV</li>
-<li><i class="fas fa-wifi"></i>Ücretsiz Wi-Fi</li>
-<li><i class="fas fa-bath"></i>Lüks Banyo</li>
-</ul>
-<a href="tel:+905397460093" class="reserve-btn">Rezervasyon Yap</a>
-</div>
-</div>
-
+  <!-- Şehir Manzaralı Oda (eski Deluxe) -->
+  <div class="room-card">
+    <img src="images/libra24.jpeg" class="room-img" alt="Şehir Manzaralı Oda">
+    <div class="p-6">
+      <h3>Şehir Manzaralı Oda</h3>
+      <ul>
+        <li><i class="fas fa-city"></i>Şehir Manzarası</li>
+        <li><i class="fas fa-bed"></i>King Size Yatak</li>
+        <li><i class="fas fa-tv"></i>Akıllı TV</li>
+        <li><i class="fas fa-wifi"></i>Ücretsiz Wi-Fi</li>
+        <li><i class="fas fa-bath"></i>Lüks Banyo</li>
+      </ul>
+      <a href="tel:+905397460093" class="reserve-btn">Rezervasyon Yap</a>
+    </div>
+  </div>
 </section>
+
+<!-- GALERİ -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 text-blue-950">Otel Galerisi</h2>
+    
+    <div class="gallery-grid">
+      <!-- 1'den 19'a kadar galerideki resimler -->
+      <div class="gallery-item" onclick="openModal('images/libra1.jpeg')">
+        <img src="images/libra1.jpeg" alt="Galeri 1">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra2.jpeg')">
+        <img src="images/libra2.jpeg" alt="Galeri 2">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra3.jpeg')">
+        <img src="images/libra3.jpeg" alt="Galeri 3">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra4.jpeg')">
+        <img src="images/libra4.jpeg" alt="Galeri 4">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra5.jpeg')">
+        <img src="images/libra5.jpeg" alt="Galeri 5">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra6.jpeg')">
+        <img src="images/libra6.jpeg" alt="Galeri 6">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra7.jpeg')">
+        <img src="images/libra7.jpeg" alt="Galeri 7">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra8.jpeg')">
+        <img src="images/libra8.jpeg" alt="Galeri 8">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra9.jpeg')">
+        <img src="images/libra9.jpeg" alt="Galeri 9">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra10.jpeg')">
+        <img src="images/libra10.jpeg" alt="Galeri 10">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra11.jpeg')">
+        <img src="images/libra11.jpeg" alt="Galeri 11">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra12.jpeg')">
+        <img src="images/libra12.jpeg" alt="Galeri 12">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra13.jpeg')">
+        <img src="images/libra13.jpeg" alt="Galeri 13">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra14.jpeg')">
+        <img src="images/libra14.jpeg" alt="Galeri 14">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra15.jpeg')">
+        <img src="images/libra15.jpeg" alt="Galeri 15">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra16.jpeg')">
+        <img src="images/libra16.jpeg" alt="Galeri 16">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra17.jpeg')">
+        <img src="images/libra17.jpeg" alt="Galeri 17">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra18.jpeg')">
+        <img src="images/libra18.jpeg" alt="Galeri 18">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openModal('images/libra19.jpeg')">
+        <img src="images/libra19.jpeg" alt="Galeri 19">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HARİTA -->
 <section class="py-20 bg-gray-900 text-white text-center">
 <h2 class="text-4xl font-bold mb-4">Konumumuz</h2>
-
 <div class="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl mt-10">
 <iframe
 src="https://maps.google.com/maps?q=Aydıntepe%20Mahallesi%20Dinçel%20Sokak%2023%20Tuzla%20İstanbul&z=15&output=embed"
@@ -229,58 +362,72 @@ style="border:0;" loading="lazy">
 <!-- FOOTER -->
 <footer class="bg-blue-900 text-white py-12">
   <div class="max-w-7xl mx-auto px-6 text-center">
-   
-    <!-- Logo + Site Adı (Tıklanabilir) -->
+    <!-- Logo + Site Adı -->
     <a href="https://www.webvereklam.org" target="_blank"
        class="inline-flex items-center gap-3 hover:opacity-80 transition-all duration-300 group mb-8">
-     
-      <!-- Logo kısmı -->
       <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-900 font-bold text-3xl shadow-lg group-hover:scale-110 transition-transform">
         W
       </div>
-     
-      <!-- Yazı kısmı -->
       <div class="text-left">
         <span class="text-3xl font-bold tracking-tight">webvereklam</span>
         <span class="text-blue-300 text-2xl font-medium">.org</span>
       </div>
     </a>
-
-    <!-- Copyright ve Bilgiler -->
     <p class="text-lg text-white/90">
-      © 2026 Libra Otel -  Webvereklam.org - Profesyonel Web Tasarım & Dijital Reklam Ajansı
+      © 2026 Libra Otel - Webvereklam.org - Profesyonel Web Tasarım & Dijital Reklam Ajansı
     </p>
-    
     <p class="mt-3 text-white/80">
-      📞 +90 539 746 00 93 &nbsp;&nbsp; | &nbsp;&nbsp; 
+      📞 +90 539 746 00 93 &nbsp;&nbsp; | &nbsp;&nbsp;
       📧 tuzlalibraotel@gmail.com
     </p>
   </div>
+</footer>
 
-<!-- FLOAT -->
+<!-- FLOATING BUTTONS -->
 <div class="floating-buttons">
 <a href="tel:+905397460093" class="float-btn phone"><i class="fas fa-phone"></i></a>
 <a href="https://wa.me/905397460093" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
 </div>
 
-<!-- JS FIX (GARANTİ ÇALIŞIR) -->
+<!-- MODAL -->
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Büyük Resim">
+  </div>
+</div>
+
+<!-- JS -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-
-  if (!menuBtn || !mobileMenu) {
-    console.log("Menu bulunamadı");
-    return;
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
   }
+});
 
-  menuBtn.addEventListener("click", function () {
-    mobileMenu.classList.toggle("hidden");
-  });
+// Modal Fonksiyonları
+function openModal(src) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  modal.style.display = "flex";
+  modalImg.src = src;
+}
 
+function closeModal() {
+  const modal = document.getElementById("imageModal");
+  modal.style.display = "none";
+}
+
+// Modal dışında tıklayınca kapat
+document.getElementById("imageModal").addEventListener("click", function(e) {
+  if (e.target === this) {
+    closeModal();
+  }
 });
 </script>
-
 </body>
 </html>
